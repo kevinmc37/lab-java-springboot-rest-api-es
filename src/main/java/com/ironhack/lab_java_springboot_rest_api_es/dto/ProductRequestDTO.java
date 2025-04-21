@@ -1,0 +1,48 @@
+package com.ironhack.lab_java_springboot_rest_api_es.dto;
+
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+
+public class ProductRequestDTO {
+    @NotBlank(message = "Name can't be blank, null or empty")
+    private String name;
+
+    @NotBlank(message = "Category can't be blank, null or empty")
+    private String category;
+
+    @Min(value = 1, message = "Price has to be greater than 1")
+    private double price;
+
+    @Min(value = 0, message = "Quantity has to be greater than 0")
+    private int quantity;
+
+    public ProductRequestDTO() {}
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public int getQuantity() { return quantity; }
+
+    public void setQuantity(int quantity) { this.quantity = quantity; }
+}
