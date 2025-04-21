@@ -28,7 +28,7 @@ public class Product {
     }
 
     public void setName(String name) {
-        int MIN_NAME_LENGTH = 2;
+        int MIN_NAME_LENGTH = 3;
         if (!name.isBlank() && name.length() > MIN_NAME_LENGTH) { this.name = name; }
         else { this.name = "Placeholder"; }
     }

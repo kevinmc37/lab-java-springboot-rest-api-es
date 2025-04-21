@@ -1,5 +1,6 @@
 package com.ironhack.lab_java_springboot_rest_api_es.dto;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 
@@ -11,6 +12,7 @@ public class CustomerRequestDTO {
     private int age;
 
     @NotBlank(message = "Email can't be blank, null or empty")
+    @Email(message = "Invalid email format")
     private String email;
 
     @NotBlank(message = "Address can't be blank, null or empty")

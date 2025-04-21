@@ -2,9 +2,11 @@ package com.ironhack.lab_java_springboot_rest_api_es.dto;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 public class ProductRequestDTO {
     @NotBlank(message = "Name can't be blank, null or empty")
+    @Size(min = 3, message = "Name has to be at least 3 characters long")
     private String name;
 
     @NotBlank(message = "Category can't be blank, null or empty")
