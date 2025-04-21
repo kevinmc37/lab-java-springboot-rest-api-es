@@ -2,6 +2,7 @@ package com.ironhack.lab_java_springboot_rest_api_es.dto;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 
 public class ProductRequestDTO {
@@ -12,10 +13,10 @@ public class ProductRequestDTO {
     @NotBlank(message = "Category can't be blank, null or empty")
     private String category;
 
-    @Min(value = 1, message = "Price has to be greater than 1")
+    @Positive(message = "Price has to be greater than 0")
     private double price;
 
-    @Min(value = 0, message = "Quantity has to be greater than 0")
+    @Positive(message = "Quantity has to be greater than 0")
     private int quantity;
 
     public ProductRequestDTO() {}
